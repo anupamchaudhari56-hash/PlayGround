@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#7ebd8b" />
+  <title>Meadowbrook — Farming Simulator 26</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <div id="world" aria-label="3D farming game"></div>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Meadowbrook home"><span class="brand-mark">✳</span><span>MEADOWBROOK<small>FARMING SIMULATOR 26</small></span></a>
+      <div class="season-pill"><span class="sun-icon">☀</span><span><b>SPRING</b><small id="day-label">DAY 1 · 08:00 AM</small></span></div>
+      <div class="wallet"><span class="coin">¢</span><span id="money">1,250</span></div>
+      <button class="icon-btn sound-btn" id="sound-btn" title="Toggle sound">♫</button>
+      <button class="icon-btn" id="help-btn" title="How to play">?</button>
+    </header>
+    <section class="mission-card">
+      <div class="mission-icon">✦</div><div><div class="eyebrow">TODAY'S TASK</div><h1>First harvest</h1><p id="mission-text">Grow and harvest 3 crops to earn a bonus.</p><div class="progress-track"><i id="mission-progress"></i></div><div class="progress-caption"><span id="harvest-count">0 / 3 harvested</span><span>+¢350</span></div></div>
+    </section>
+    <aside class="weather-card"><span class="weather-symbol">☀️</span><div><b>Sunny</b><small>Perfect growing weather</small></div><span class="temp">22°</span></aside>
+    <section class="tools-panel">
+      <div class="panel-label">YOUR TOOLBELT <span>1–4</span></div>
+      <div class="tools-grid">
+        <button class="tool active" data-tool="till"><span class="tool-art">⚒</span><span class="tool-name">Plow</span><kbd>1</kbd></button>
+        <button class="tool" data-tool="seed"><span class="tool-art">🌱</span><span class="tool-name">Plant</span><kbd>2</kbd></button>
+        <button class="tool" data-tool="water"><span class="tool-art">💧</span><span class="tool-name">Water</span><kbd>3</kbd></button>
+        <button class="tool" data-tool="harvest"><span class="tool-art">🌾</span><span class="tool-name">Harvest</span><kbd>4</kbd></button>
+      </div>
+      <div class="tool-hint" id="tool-hint">Till a patch of soil to get started</div>
+    </section>
+    <section class="seed-card">
+      <div class="seed-header"><span>SEEDS</span><button id="shop-btn">＋ SHOP</button></div>
+      <button class="seed-choice selected" data-seed="wheat"><span class="seed-emoji">🌾</span><span>Wheat<small>4 days · ¢28</small></span><i id="wheat-stock">12</i></button>
+      <button class="seed-choice" data-seed="carrot"><span class="seed-emoji">🥕</span><span>Carrot<small>3 days · ¢42</small></span><i id="carrot-stock">6</i></button>
+      <button class="seed-choice" data-seed="corn"><span class="seed-emoji">🌽</span><span>Sweet corn<small>5 days · ¢65</small></span><i id="corn-stock">3</i></button>
+    </section>
+    <div class="toast" id="toast"></div>
+    <div class="interaction" id="interaction"><span class="keycap">E</span><span id="interaction-text">Work this patch</span></div>
+    <footer class="bottom-bar">
+      <div class="controls-hint"><span>WASD</span> move <span class="dot">·</span><span>CLICK</span> work a patch <span class="dot">·</span><span>Q / E</span> rotate</div>
+      <div class="day-controls"><button id="zoom-out" aria-label="Zoom out">−</button><button id="zoom-in" aria-label="Zoom in">＋</button><button class="sleep-btn" id="sleep-btn">🌙 <span>End day</span></button></div>
+    </footer>
+    <div class="mobile-pad" aria-label="Movement controls"><button data-move="up">▲</button><div><button data-move="left">◀</button><button data-move="down">▼</button><button data-move="right">▶</button></div></div>
+    <div class="modal-backdrop" id="modal-backdrop"><div class="modal" id="modal-content"></div></div>
+    <div class="start-overlay" id="start-overlay"><div class="start-card"><div class="start-logo">✳</div><div class="eyebrow">YOUR STORY STARTS HERE</div><h2>A little land.<br><em>A lot of possibility.</em></h2><p>Welcome to Meadowbrook. Your grandfather left you a patch of fertile land, a trusty tractor, and a fresh new season.</p><button id="start-btn">LET'S GET GROWING <span>→</span></button><small>Use WASD to drive · Click a field tile to work</small></div></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
